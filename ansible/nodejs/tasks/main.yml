@@ -1,0 +1,50 @@
+- name: Download the nvm install script
+  get_url:
+    url: https://raw.githubusercontent.com/nvm-sh/nvm/{{ nvm_version }}/install.sh
+    dest: /tmp
+    mode: u+rwx
+  become: false
+
+- name: Execute the nvm install script
+  shell:
+    cmd: bash install.sh
+    chdir: /tmp
+    executable: /bin/bash
+  become: false
+
+- name: Delete the nvm install script
+  file:
+    path: /tmp/install.sh
+    state: absent
+  become: false
+
+- name: Install Node.js {{ nodejs_version }}
+  shell:
+    cmd: . {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install {{ nodejs_version }}
+  args:
+    executable: /bin/bash
+    chdir: "{{ ansible_env.HOME }}"
+    creates: "{{ ansible_env.HOME }}/.nvm/versions/node/v{{ nodejs_version }}"
+  become: false
+
+- name: Set Node.js {{ nodejs_version }} as the default
+  shell:
+    cmd: . {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm alias default {{ nodejs_version }}
+  args:
+    executable: /bin/bash
+    chdir: "{{ ansible_env.HOME }}"
+  become: false
+
+- name: Set npm version
+  npm:
+    name: npm
+    global: yes
+    version: "{{ npm_version }}"
+  become: false
+
+- name: Install yarn {{ yarn_version }}
+  npm:
+    name: yarn
+    global: yes
+    version: "{{ yarn_version }}"
+  become: false

@@ -1,0 +1,9 @@
+- name: Update the package lists
+  apt:
+    update_cache: yes
+  become: yes
+
+- name: Install the jq package
+  apt:
+    name: jq
+  become: yes

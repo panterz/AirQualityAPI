@@ -1,0 +1,9 @@
+{
+    "baseUrl": "/sql/carto_dw",
+    "version": "v3",
+    "serviceApi": "query",
+    "messages": {
+        "requestFailed": "There has been an unexpected error. Please try again.",
+        "notFound": "Data could not be found"
+    }
+}

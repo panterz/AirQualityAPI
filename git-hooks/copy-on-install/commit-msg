@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+# commit-msg git hook validates commit message during git commit.
+# Checks message is prefixed with jira ticket number
+
+# $1 is the file containing the commit message
+# grep -E flag is necessary to allow us to use modern regex short cuts like \s and \d
+
+grep -E -i "^\s*CADMAP-[0-9]{3,4}.*$" $1
+
+if [[ $? > 0 ]]; then
+    echo -e "\e[COMMIT ABORTED: Commit message should be prefixed with Jira card number e.g. CADMAP-1582: commit msg here. \e[0m"
+    exit 1
+fi
+
+exit 0

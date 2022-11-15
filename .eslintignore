@@ -1,0 +1,7 @@
+dist
+node_modules
+vendor
+**/*.min.js
+**/*.json
+tests/utils/dom.js
+*.ejs

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+echo "INSTALL commit hooks, current working directory:"
+
+echo $PWD
+
+echo "Copying git hook files from ./git-hooks/copy-on-install/ to .git/hooks..."
+
+cp -R ./git-hooks/copy-on-install/. .git/hooks/
+
+echo "Assigning execute permission to the git hook files copied into .git/hooks ...."
+chmod +x .git/hooks/pre-commit
+chmod +x .git/hooks/pre-push
+chmod +x .git/hooks/commit-msg
