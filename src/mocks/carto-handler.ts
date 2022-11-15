@@ -22,8 +22,20 @@ const getStatusAndResponse = (q: string | null): StatusAndResponse => {
         } else if (errorCodes.includes(q)) {
             status = parseInt(q, 10);
         } else if (
-            q ===
-            "select avg(co) from cartodb-gcp-backend-data-team.code_test.airquality_measurements where timeinstant between '2016-07-01T00:00:00.000Z' and '2016-07-05T00:00:00.000Z'"
+            getQueryWithNoSpaceOrBreakLines(q) ===
+            getQueryWithNoSpaceOrBreakLines(`with t1 as (
+                select a.geoid, b.station_id, c.population
+                from cartodb-gcp-backend-data-team.code_test.airquality_stations b,
+                carto-data.ac_puvhdapm.sub_worldpop_geography_esp_grid100m_v1 a
+                inner join carto-data.ac_puvhdapm.sub_worldpop_demographics_population_esp_grid100m_v1_yearly_2010 c
+                on a.geoid = c.geoid
+                where ST_Contains(a.geom, b.geom)
+            )
+            select avg(m.co), t.population, t.station_id
+                from cartodb-gcp-backend-data-team.code_test.airquality_measurements m
+                inner join t1 t on m.station_id = t.station_id
+                where m.timeinstant between '2016-07-01T00:00:00.000Z' and '2016-07-05T00:00:00.000Z'
+                group by t.population, t.station_id`)
         ) {
             return {
                 status: 200,
@@ -42,6 +54,9 @@ const getStatusAndResponse = (q: string | null): StatusAndResponse => {
 
     return {successResponse, status};
 };
+
+const getQueryWithNoSpaceOrBreakLines = (q: string) =>
+    q.replace(/ /g, "").replace(/\n/g, "");
 
 export const handleCartoRequests = (
     req: MockedRequest,

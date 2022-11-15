@@ -48,6 +48,14 @@ export default {
                     f0_: {
                         type: "number",
                         example: 15.979461088352439
+                    },
+                    population_: {
+                        type: "number",
+                        example: 15.979461088352439
+                    },
+                    station_id: {
+                        type: "string",
+                        example: "aq_uam"
                     }
                 }
             }

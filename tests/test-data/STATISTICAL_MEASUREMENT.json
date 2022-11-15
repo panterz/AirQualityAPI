@@ -1,1 +1,73 @@
-{"rows": [{"f0_":0.4862384605249852}], "schema": [{"name":"f0_","type":"number"}], "meta": {"cacheHit":true,"totalBytesProcessed":"0","location":"US"}}
+{
+    "rows": [
+      {
+        "f0_": 0.48344135901161905,
+        "population": 68.78740692138672,
+        "station_id": "aq_alcala_zamora"
+      },
+      {
+        "f0_": 0.4869336220673055,
+        "population": 32.49060821533203,
+        "station_id": "aq_salvia"
+      },
+      {
+        "f0_": 0.4867595924696316,
+        "population": 14.065185546875,
+        "station_id": "aq_nevero"
+      },
+      {
+        "f0_": 0.48540443062747246,
+        "population": 44.977195739746094,
+        "station_id": "aq_ciudad_escolar"
+      },
+      {
+        "f0_": 0.48716778283852463,
+        "population": 36.53279113769531,
+        "station_id": "aq_jaen"
+      },
+      {
+        "f0_": 0.48597190017394987,
+        "population": 28.1295108795166,
+        "station_id": "aq_uam"
+      },
+      {
+        "f0_": 0.4876506752475319,
+        "population": 59.44640350341797,
+        "station_id": "aq_alonso_quijano"
+      },
+      {
+        "f0_": 0.48674748188277717,
+        "population": 43.63193893432617,
+        "station_id": "aq_aragoneses"
+      },
+      {
+        "f0_": 0.48691957091068666,
+        "population": 35.14594650268555,
+        "station_id": "aq_distrito_telefonica"
+      },
+      {
+        "f0_": 0.48539087479511955,
+        "population": 14.816325187683105,
+        "station_id": "aq_camino_del_sur"
+      }
+    ],
+    "schema": [
+      {
+        "name": "f0_",
+        "type": "number"
+      },
+      {
+        "name": "population",
+        "type": "number"
+      },
+      {
+        "name": "station_id",
+        "type": "string"
+      }
+    ],
+    "meta": {
+      "cacheHit": false,
+      "totalBytesProcessed": "13224837567",
+      "location": "US"
+    }
+  }
