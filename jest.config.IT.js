@@ -1,10 +1,5 @@
 module.exports = {
     "testEnvironment": "jest-environment-node",
-    globals: {
-        "ts-jest": {
-            tsconfig: "tsconfig.json"
-        }
-    },
     moduleFileExtensions: [
         "ts",
         "js"
@@ -15,5 +10,6 @@ module.exports = {
     testMatch: [
         "**/integration-tests/**/*.spec.(ts|js)"
     ],
-    "automock": false
+    "automock": false,
+    "setupFilesAfterEnv": ["./jest.setup.js"]
 };

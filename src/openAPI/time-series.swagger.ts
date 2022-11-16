@@ -1,7 +1,8 @@
 export const getTimeSeries = {
-    tags: ["Get time series for stations"],
-    description: "Returns a time series for stations",
-    summary: "Returns a time series for stations",
+    tags: ["Get time series for station for a given station"],
+    description:
+        "Timeseries time! Consider that somebody want to know how the air quality is evolving over the time. We need to create a new endpoint to return a timeserie per each station.",
+    summary: "Returns a time series for a given station",
     parameters: [
         {
             name: "from",

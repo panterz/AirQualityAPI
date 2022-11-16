@@ -1,6 +1,7 @@
 export const getMeasurement = {
     tags: ["Get Statistical Measurement for stations"],
-    description: "Returns a statistical measurement for stations",
+    description:
+        "It returns the requested statistical measurement for a given variable for each station. It also includes how much population the value affect. Statistical measurements such as average, min, max, sum, count can be calculated",
     summary: "Returns a statistical measurement for stations",
     produces: ["application/json"],
     operationId: "getMeasurement",
