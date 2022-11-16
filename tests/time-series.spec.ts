@@ -54,8 +54,8 @@ describe("Time series scenarios", () => {
         );
     });
 
-    test("When the stationId that is passed is not a number then an error should be thrown", (done) => {
-        const errorMessage = "The stationId should be a number";
+    test("When the stationId is not passed then an error should be thrown", (done) => {
+        const errorMessage = "The stationId should be passed";
 
         sendTimeSeriesRequestAndTest(
             HttpStatusCode.BAD_REQUEST,

@@ -100,7 +100,7 @@ yarn run test-dev tests/app.spec.ts
 Run integration tests:
 
 ```
-yarn run test-integration
+./scripts/run_integration_tests.sh <client_id> <client_secret>
 ```
 
 ## Access URLs

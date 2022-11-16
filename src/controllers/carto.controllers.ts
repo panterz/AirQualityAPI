@@ -100,7 +100,7 @@ const getStationId = (req: Request): string => {
     const stationId: string = req.query.station_id.toString();
 
     if (!stationId) {
-        throw new HTTP400Error("The stationId should be a number");
+        throw new HTTP400Error("The stationId should be passed");
     }
     return stationId;
 };
