@@ -43,7 +43,7 @@ const getStatusAndResponse = (q: string | null): StatusAndResponse => {
             };
         } else if (
             q ===
-            "select avg(co), timestamp_trunc(CAST(timeinstant AS TIMESTAMP), WEEK) AS step from cartodb-gcp-backend-data-team.code_test.airquality_measurements where station_id = '123' group by step order by step"
+            "select avg(co), timestamp_trunc(CAST(timeinstant AS TIMESTAMP), WEEK) AS step from cartodb-gcp-backend-data-team.code_test.airquality_measurements where station_id = '123' and timeinstant between '2016-07-01T00:00:00.000Z' and '2016-07-05T00:00:00.000Z' group by step order by step"
         ) {
             return {
                 status: 200,

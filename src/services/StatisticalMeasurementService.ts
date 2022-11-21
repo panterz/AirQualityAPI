@@ -48,7 +48,8 @@ export class StatisticalMeasurementService {
     ) {
         return (
             `select ${filter.statisticalMeasurement}(${filter.statisticalVariable}), timestamp_trunc(CAST(timeinstant AS TIMESTAMP), ${step}) AS step ` +
-            `from cartodb-gcp-backend-data-team.code_test.airquality_measurements where station_id = '${stationId}' ` +
+            "from cartodb-gcp-backend-data-team.code_test.airquality_measurements " +
+            `where station_id = '${stationId}' and timeinstant between '${filter.from.toISOString()}' and '${filter.to.toISOString()}' ` +
             "group by step order by step"
         );
     }

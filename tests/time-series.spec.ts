@@ -114,7 +114,8 @@ describe("Time series scenarios", () => {
             AirQualityVariable.CO.toString(),
             StatisticalMeasurement.AVG.toString(),
             "123",
-            "week"
+            "week",
+            39
         );
     });
 });

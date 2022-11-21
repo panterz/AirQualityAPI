@@ -68,10 +68,11 @@ describe("Statistical measurement scenarios", () => {
             HttpStatusCode.OK,
             "",
             done,
-            "2016-07-01 00:00:00",
-            "2016-07-05 00:00:00",
+            "2016-11-01 00:00:00",
+            "2016-11-10 00:00:00",
             AirQualityVariable.CO.toString(),
-            StatisticalMeasurement.AVG.toString()
+            StatisticalMeasurement.AVG.toString(),
+            10
         );
     });
 });
