@@ -10,6 +10,5 @@ module.exports = {
     testMatch: [
         "**/integration-tests/**/*.spec.(ts|js)"
     ],
-    "automock": false,
-    "setupFilesAfterEnv": ["./jest.setup.js"]
+    "automock": false
 };
