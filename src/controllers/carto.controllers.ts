@@ -12,7 +12,11 @@ const getDate = (req: Request, param: string): Date => {
     const parameter = req.query[param];
 
     if (parameter) {
-        if (!new Date(parameter.toString()).getTime()) {
+        if (
+            /^[0-9]{4}-(0[1-9]|1[0-2])-(0[1-9]|[1-2][0-9]|3[0-1]) (2[0-3]|[01][0-9]):[0-5][0-9]$/.test(
+                parameter.toString().trim()
+            )
+        ) {
             throw new HTTP400Error(
                 `The format of the parameter ${param} is not valid. It should follow the format YYYY-MM-DD HH:MM:SS`
             );
