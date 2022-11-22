@@ -17,7 +17,7 @@ cd <app>
 nvm use v14.17.4
 yarn install
 ./git-hooks/git-hooks-setup
-./develop.sh <CARTO_KEY>
+./develop.sh <client_id> <client_secret>
 ```
 
 ## Environment Variables
